@@ -23,7 +23,7 @@ angular.module('anguvideo', [])
                 var youtubeParams = (attrs.hideControls ? '?autoplay=0&showinfo=0&controls=0' : '');
 
                 scope.$watch('source', function (newVal) {
-                    if (newVal) {
+                    if (!angular.isUndefined(newVal)) {
                         /*
                         * Need to convert the urls into a friendly url that can be embedded and be used in the available online players the services have provided
                         * for youtube: src="//www.youtube.com/embed/{{video_id}}"
